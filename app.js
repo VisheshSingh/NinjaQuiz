@@ -13,12 +13,15 @@ form.addEventListener('submit', e => {
     form.q4.value
   ];
 
+  // Tally the score
   userAnswers.forEach((answer, index) => {
     if (answer === correctAnswers[index]) {
       score += 25;
     }
   });
 
+  // show the result
+  scrollTo(0, 0);
   result.querySelector('span').textContent = score + '%';
   result.classList.remove('d-none');
 });
